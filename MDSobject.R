@@ -11,8 +11,6 @@
 # difficulty-level times 4, times 2 for double assignment, plus 1 for peer-review.
 
 MDSassignment <- function(cID, l_num, diff, d_work, peer_r){
-  if (typeof(cID) != "integer") stop("course ID must be integer")
-  if (legnth(cID) != 3) stop("course ID must have 3 digits")
   value <- list(course_id = cID, lab_number = l_num, difficulty_level  = diff, double_assignment = d_work, peer_review = peer_r)
   attr(value, "class") <- "MDSassignment"
   attr
@@ -20,11 +18,11 @@ MDSassignment <- function(cID, l_num, diff, d_work, peer_r){
 
 hours_needed.MDSassignment <- function(obj){
   work <- NaN
-  if (MDSassignment$d_work = TRUE){
+  if (MDSassignment$d_work == TRUE){
     work <- 1
   }
   peer <- NaN
-  if (MDSassignment$peer_r = TRUE){
+  if (MDSassignment$peer_r == TRUE){
     peer <- 1
   }
   hours <- MDSassignment$diff * 4 + work * 2 + peer * 1
